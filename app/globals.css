@@ -63,6 +63,9 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  --base-primary: #171717;
+  --text-primary: #1c1b19;
 }
 
 .dark {
@@ -197,6 +200,9 @@
   --color-destructive: var(--bgSerious);
   --color-destructive-hover: var(--bgSerious2);
   --color-destructive-foreground: var(--fgSerious);
+
+  --color-base-primary: var(--base-primary);
+  --color-text-primary: var(--text-primary);
 }
 
 @layer base {
