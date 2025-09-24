@@ -1,9 +1,14 @@
+'use client';
+
+import { useState } from 'react';
 import Image from 'next/image';
+import Modal from './modal';
 import { Button } from './ui/button';
 
 export default function Job() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
-    <main className="mx-auto my-8 flex max-w-2xl flex-col gap-10 p-4 md:my-16 md:p-8">
+    <main className="text-text-primary mx-auto my-8 flex max-w-2xl flex-col gap-10 p-4 md:my-16 md:p-8">
       <header>
         <section className="relative flex w-full flex-wrap items-center gap-4">
           <Image src="/oakify-logo.png" width={60} height={60} alt="logo" />
@@ -14,9 +19,37 @@ export default function Job() {
           <Button
             variant="primary"
             className="bg-base-primary focus:bg-base-primary/90 hover:bg-base-primary/90 right-0 w-full md:absolute md:top-0 md:w-auto"
+            onClick={() => setIsModalOpen(true)}
           >
             Apply
           </Button>
+          <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+            <div className="mb-4 max-w-lg text-center">
+              <Image src="/logo.png" width={48} height={48} alt="logo" className="mx-auto mb-4" />
+              <h2 className="mb-2 text-lg font-semibold">
+                Heads up! You&apos;ll be meeting your AI recruiter
+              </h2>
+              <p className="text-text-secondary text-sm">
+                When you apply to this job, you&apos;ll be having an initial interview with our AI
+                recruiter to help qualify you to the job.
+              </p>
+            </div>
+            <div className="flex gap-2">
+              <Button
+                className="min-w-0 flex-1"
+                variant="outline"
+                onClick={() => setIsModalOpen(false)}
+              >
+                Cancel
+              </Button>
+              <Button
+                variant="primary"
+                className="bg-base-primary focus:bg-base-primary/90 hover:bg-base-primary/90 min-w-0 flex-1"
+              >
+                Continue
+              </Button>
+            </div>
+          </Modal>
         </section>
         <div className="mt-3 flex flex-wrap gap-2 md:gap-4">
           <span className="border-border-muted border-r pr-2 md:pr-4">Full-time</span>

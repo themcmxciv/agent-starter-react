@@ -66,6 +66,7 @@
 
   --base-primary: #171717;
   --text-primary: #1c1b19;
+  --text-secondary: #737373;
 }
 
 .dark {
@@ -203,6 +204,7 @@
 
   --color-base-primary: var(--base-primary);
   --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
 }
 
 @layer base {
