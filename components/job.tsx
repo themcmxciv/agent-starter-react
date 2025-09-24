@@ -2,11 +2,14 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import Modal from './modal';
 import { Button } from './ui/button';
 
 export default function Job() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const router = useRouter();
+
   return (
     <main className="text-text-primary mx-auto my-8 flex max-w-2xl flex-col gap-10 p-4 md:my-16 md:p-8">
       <header>
@@ -45,6 +48,7 @@ export default function Job() {
               <Button
                 variant="primary"
                 className="bg-base-primary focus:bg-base-primary/90 hover:bg-base-primary/90 min-w-0 flex-1"
+                onClick={() => router.push('/job/sign-up')}
               >
                 Continue
               </Button>
